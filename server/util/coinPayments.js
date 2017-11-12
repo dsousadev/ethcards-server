@@ -9,12 +9,10 @@ createTransaction = (amount, buyerEmail) => {
         amount,
         currency1: "USD",
         currency2: "ETH",
-        buyer_email: buyerEmail  
+        buyer_email: buyerEmail,
+        ipn_url: process.env.SERVER_URL
     }
-    // client.createTransaction(options, (err, res) => {
-    //     console.log(res);
-    // })
-    client.getCallbackAddress("ETH", (err, res) => {
+    client.createTransaction(options, (err, res) => {
         console.log(res);
     })
 }

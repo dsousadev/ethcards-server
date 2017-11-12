@@ -47,4 +47,4 @@ events.on("ipn_complete", function(data) {
 
 app.listen(3000, console.log("Listening on 3000"));
 
-console.log(coinPayments.createTransaction(100, "hey@gmail.com"));
+// console.log(coinPayments.createTransaction(1, "mediaskate648@gmail.com"));
