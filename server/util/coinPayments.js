@@ -1,7 +1,7 @@
 var Coinpayments = require('coinpayments');
 var client = new Coinpayments({
     key: process.env.COIN_PUB,
-    secret: process.env.COIN_PRIV
+    secret: process.env.COIN_PRIV,
 }); 
 
 createTransaction = (amount, buyerEmail) => {
@@ -11,7 +11,10 @@ createTransaction = (amount, buyerEmail) => {
         currency2: "ETH",
         buyer_email: buyerEmail  
     }
-    client.createTransaction(options, (err, res) => {
+    // client.createTransaction(options, (err, res) => {
+    //     console.log(res);
+    // })
+    client.getCallbackAddress("ETH", (err, res) => {
         console.log(res);
     })
 }
